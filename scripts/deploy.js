@@ -17,9 +17,14 @@ async function main() {
   const Greeter = await hre.ethers.getContractFactory("Greeter");
   const greeter = await Greeter.deploy("Hello, Hardhat!");
 
+  const NSToken = await hre.ethers.getContractFactory("NSToken");
+  const nsToken = await NSToken.deploy("Nicolas Sanch Token", "NST");
+
   await greeter.deployed();
+  await nsToken.deployed();
 
   console.log("Greeter deployed to:", greeter.address);
+  console.log("Token deployed to:", nsToken.address);
 }
 
 // We recommend this pattern to be able to use async/await everywhere
