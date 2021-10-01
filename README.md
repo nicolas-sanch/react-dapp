@@ -19,29 +19,38 @@ cd react-dapp
 npm install
 ```
 
-2. Create your .env file with your own values
+2. Start the local test node
+
+```sh
+npx hardhat node
+```
+
+3. Deploy the contract
+
+```sh
+npx hardhat run scripts/deploy.js --network localhost
+```
+
+4. Update __src/App.js__ with the values of your contract addresses (`greeterAddress` and `tokenAddress`)
+
+5. Run the app
+
+```sh
+npm start
+```
+## Deploying and using Ropsten test network
+
+1. Create your .env file with your own values
 
 ```sh
 cp .env.example .env
 vi .env
 ```
 
-3. Start the local test node
+2. Update __/hardhat.config.js__ by uncommenting the `ropsten` block
+
+3. Deploy the contract
 
 ```sh
-npx hardhat node
-```
-
-4. Deploy the contract
-
-```sh
-npx hardhat run scripts/deploy.js --network localhost
-```
-
-5. Update __src/App.js__ with the values of your contract addresses (`greeterAddress` and `tokenAddress`)
-
-6. Run the app
-
-```sh
-npm start
+npx hardhat run scripts/deploy.js --network ropsten
 ```
