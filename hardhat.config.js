@@ -35,9 +35,9 @@ module.exports = {
     hardhat: {
       chainId: 1337 // MetaMask chainId issue https://hardhat.org/metamask-issue.html
     },
-    ropsten: {
-      url: process.env.REACT_APP_ROPSTEN_INFURA_URL,
-      accounts: [`0x${process.env.REACT_APP_ACCOUNT_KEY}`]
-    }
+    //ropsten: {
+    //  url: process.env.REACT_APP_ROPSTEN_INFURA_URL,
+    //  accounts: [`0x${process.env.REACT_APP_ACCOUNT_KEY}`]
+    //}
   }
 };
